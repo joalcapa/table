@@ -17,7 +17,7 @@ const useUsersFilter = (props = {}) => {
     };
 
     return {
-        users: filteredUsers,
+        filteredUsers,
         filter,
         changeFilter,
     }

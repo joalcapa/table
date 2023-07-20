@@ -5,8 +5,8 @@ import useSettings from './useSettings';
 
 const useUsersList = (props = {}) => {
     const { deleteUser = () => {}, restoreUsers = () => {} } = props;
-    const { users, filter, changeFilter } = useUsersFilter(props);
-    const { sortedUsers, onSort, onCountrySort } = useUsersSort({ users });
+    const { filteredUsers, filter, changeFilter } = useUsersFilter(props);
+    const { sortedUsers, onSort, onCountrySort } = useUsersSort({ users: filteredUsers });
     const { isDarkTable, changeDarkTable } = useSettings(props);
 
     useUsersFetch(props);

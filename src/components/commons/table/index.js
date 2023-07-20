@@ -63,8 +63,8 @@ const Table = (props) => (
                         className={
                             `table-fill ${
                                 props.isDark ? 
-                                `pointer-events ${index % 2 === 0 ? 'dark-fill' : 'light-dark-fill'}`    
-                            : ''
+                                    `pointer-events ${ index % 2 === 0 ? 'dark-fill' : 'light-dark-fill' }`    
+                                    : ''
                             }`
                         }
                     >
