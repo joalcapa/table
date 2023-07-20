@@ -8,7 +8,7 @@ export const ENDPOINTS = {
     local: {
         users: {
             get: {
-                url: "/users",
+                url: "?results=10",
                 method: "get",
             },
         },

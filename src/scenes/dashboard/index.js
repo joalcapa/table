@@ -1,19 +1,9 @@
-import PropTypes from 'prop-types';
+import UsersList from '../../components/users/list';
 
-import './index.css';
-
-const Dashboard = (props) => (
-    <div>
-        Dashboard
-    </div>
+const Dashboard = () => (
+    <>
+        <UsersList />
+    </>
 );
-
-Dashboard.propTypes = {
-    
-};
-
-Dashboard.defaultProps = {
-    
-};
 
 export default Dashboard;
