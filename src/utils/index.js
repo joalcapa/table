@@ -23,7 +23,7 @@ export const usersListFields = [
         label: 'Acciòn',
         value: 'onDelete',
         type: 'button',
-        buttonLabel: 'Eliminar'
+        buttonLabel: 'Delete'
     },
 ];
 

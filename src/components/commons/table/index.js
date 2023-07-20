@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import './index.css';
 
 const Item = (props) => {
     const { type, data, label } = props;
@@ -42,6 +43,7 @@ const Table = (props) => (
                 {
                     props.fields.map((field) => (
                         <th
+                            className='fill-name'
                             onClick={() => {
                                 props.onSort(field.value);
                             }}
@@ -55,20 +57,29 @@ const Table = (props) => (
         </thead>
         <tbody>
             {
-                props.data.map((item) => (
-                    <tr key={item.id}>
-                        <td>
-                            {
-                                props.fields.map((field) => (
+                props.data.map((item, index) => (
+                    <tr 
+                        key={item.id}
+                        className={
+                            `table-fill ${
+                                props.isDark ? 
+                                `pointer-events ${index % 2 === 0 ? 'dark-fill' : 'light-dark-fill'}`    
+                            : ''
+                            }`
+                        }
+                    >
+                        {
+                            props.fields.map((field) => (
+                                <td>
                                     <Item 
                                         key={`${field.value}${item.id}`}
                                         type={field.type}
                                         data={item[field.value]}
                                         label={field.buttonLabel}
                                     />
-                                ))
-                            }
-                        </td>
+                                </td>
+                            ))
+                        }
                     </tr>
                 ))
             }
@@ -87,12 +98,14 @@ Table.propTypes = {
     ),
     data: PropTypes.array,
     onSort: PropTypes.func,
+    isDark: PropTypes.bool,
 };
 
 Table.defaultProps = {
     fields: [],
     data: [],
     onSort: () => {},
+    isDark: false,
 };
 
 export default Table;

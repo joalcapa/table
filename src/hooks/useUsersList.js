@@ -1,15 +1,18 @@
 import useUsersFetch from './useUsersFetch';
 import useUsersFilter from './useUsersFilter';
 import useUsersSort from './useUsersSort';
+import useSettings from './useSettings';
 
 const useUsersList = (props = {}) => {
     const { deleteUser = () => {}, restoreUsers = () => {} } = props;
     const { users, filter, changeFilter } = useUsersFilter(props);
     const { sortedUsers, onSort, onCountrySort } = useUsersSort({ users });
+    const { isDarkTable, changeDarkTable } = useSettings(props);
 
     useUsersFetch(props);
 
     return {
+        isDarkTable,
         filter,
         users: sortedUsers.map((user) => ({
             ...user,
@@ -21,6 +24,7 @@ const useUsersList = (props = {}) => {
         restoreUsers,
         onSort,
         onCountrySort,
+        changeDarkTable,
     }
 };
 
