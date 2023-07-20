@@ -1,0 +1,15 @@
+.dark-fill {
+    background-color: #112233;
+}
+
+.light-dark-fill {
+    background-color: #556677;
+}
+
+.fill-name {
+    cursor: pointer;
+}
+
+.pointer-events {
+    pointer-events: none;
+}
